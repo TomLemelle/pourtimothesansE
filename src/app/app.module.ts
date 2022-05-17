@@ -7,6 +7,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {environment} from "../environments/environment";
 import {InMemoryDataService} from "./mock/InMemoryDataService";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {InMemoryDataService} from "./mock/InMemoryDataService";
     HttpClientModule,
     !environment.production
       ? HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 100 })
-      : []
+      : [],
+    FontAwesomeModule
   ],
   providers: [],
   exports: [

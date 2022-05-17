@@ -6,6 +6,7 @@ import {ComponentsModule} from "../components/components.module";
 import { SlideComponent } from './home/slide/slide.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { PagesComponent } from './pages.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -14,10 +15,11 @@ import { PagesComponent } from './pages.component';
     SearchBarComponent,
     PagesComponent
   ],
-  imports: [
-    CommonModule,
-    PagesRoutingModule,
-    ComponentsModule,
-  ]
+    imports: [
+        CommonModule,
+        PagesRoutingModule,
+        ComponentsModule,
+        FontAwesomeModule,
+    ]
 })
 export class PagesModule { }

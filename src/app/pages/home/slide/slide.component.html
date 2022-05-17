@@ -1,9 +1,21 @@
-<div class="slide">
-  <div class="slide__element" *ngFor="let movie of movies">
-    {{category}}
-    <app-movie
-      [title]="movie.title"
-      [imgUrl]="movie.img"
-    ></app-movie>
+<div>
+  {{category}}
+  <div class="slide">
+    <div class="navigation navigation__left">
+      <fa-icon [icon]="leftArrow"></fa-icon>
+    </div>
+
+    <div class="slide__container">
+      <div class="slide__element" *ngFor="let movie of movies">
+        <app-movie
+          [title]="movie.title"
+          [imgUrl]="movie.img"
+        ></app-movie>
+      </div>
+    </div>
+
+    <div class="navigation navigation__right">
+      <fa-icon [icon]="rightArrow"></fa-icon>
+    </div>
   </div>
 </div>
