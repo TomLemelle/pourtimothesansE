@@ -8,13 +8,15 @@ import {MoviesService} from "../../services/movies.service";
 })
 export class HomeComponent implements OnInit {
 
+  movies: Movie[] | undefined;
+
   constructor(
     private _movieService: MoviesService
   ) { }
 
   ngOnInit(): void {
     this._movieService.GetMovies().subscribe(movies => {
-
+      this.movies = movies;
     })
   }
 
