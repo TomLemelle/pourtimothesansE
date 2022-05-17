@@ -22,6 +22,11 @@ export class SlideComponent implements OnInit {
   leftArrow = faLeftLong;
   rightArrow = faRightLong;
 
+  slideElement = 222;
+  slideStep = 444;
+  slideMaximum = 0;
+  slideMarginWidth = 10;
+
   constructor(
     private _movieService: MoviesService,
     private _rendered: Renderer2
@@ -29,19 +34,29 @@ export class SlideComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.category) {
-      this._movieService.GetMovies(this.category).subscribe(movies => {
+      this.subscription = this._movieService.GetMovies(this.category).subscribe(movies => {
         this.movies = movies;
+        // @ts-ignore
+        this.slideMaximum = (((this.slideElement + this.slideMarginWidth) * this.movies.length) - this.slideMarginWidth) - window.innerWidth;
       })
     }
   }
 
   slideMovies(value: number) {
-    this.slide += value;
-    if(this.slide < 0) {
-      this.slide = 0;
+    console.log(this.slideMaximum, 'slide Maximum');
+    this.slide += this.slideStep * value;
+    if(Math.abs(this.slide) >= this.slideMaximum) {
+      this.slide = (this.slideMaximum * -1);
     }
+
+    /*console.log('slide+1000:' + this.slide)
+    console.log('slidedcontainer:' + this.slideContainer?.nativeElement.clientWidth)
+    if((this.slide + 1000 ) >= this.slideContainer?.nativeElement.clientWidth) {
+      this.slide = 0;
+    }*/
+
     if(this.slideContainer) {
-      this._rendered.setStyle(this.slideContainer.nativeElement, 'transform',`translateX(${this.slide}%)`);
+      this._rendered.setStyle(this.slideContainer.nativeElement, 'transform',`translateX(${this.slide}px)`);
     }
   }
 

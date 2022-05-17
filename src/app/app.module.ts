@@ -8,10 +8,12 @@ import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {environment} from "../environments/environment";
 import {InMemoryDataService} from "./mock/InMemoryDataService";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

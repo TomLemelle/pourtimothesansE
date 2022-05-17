@@ -1,7 +1,7 @@
 <div>
   {{category}}
   <div class="slide">
-    <button class="navigation navigation__left" (click)="slideMovies(-20)">
+    <button class="navigation navigation__left" (click)="slideMovies(1)">
       <fa-icon [icon]="leftArrow"></fa-icon>
     </button>
 
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <button class="navigation navigation__right" (click)="slideMovies(20)">
+    <button class="navigation navigation__right" (click)="slideMovies(-1)">
       <fa-icon [icon]="rightArrow"></fa-icon>
     </button>
   </div>

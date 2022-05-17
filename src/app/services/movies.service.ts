@@ -19,6 +19,9 @@ export class MoviesService {
   }
 
   GetMovie(title: string) {
+  }
 
+  SearchMovies(term: string) {
+    return this._client.get<Movie[]>(`api/movies?title=${term}`);
   }
 }

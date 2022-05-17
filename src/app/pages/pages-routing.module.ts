@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: 'search',
-        component: HomeComponent
+        component: SearchComponent
       },
       {
         path: '**',
