@@ -10,8 +10,8 @@ export class MoviesService {
 
   constructor(private _client: HttpClient) { }
 
-  GetMovies(): Observable<any> {
-    return this._client.get<Movie[]>('api/movies');
+  GetMovies(category: string): Observable<any> {
+    return this._client.get<Movie[]>(`api/movies?category=${category}`);
   }
 
   GetCategories(): Observable<string[]> {

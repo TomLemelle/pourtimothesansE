@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Movie} from "../../../models/movie";
 import {MoviesService} from "../../../services/movies.service";
 import {Subscription} from "rxjs";
@@ -10,6 +10,7 @@ import {Subscription} from "rxjs";
 })
 export class SlideComponent implements OnInit {
 
+  @Input() category: string | undefined;
   movies: Movie[] | undefined;
   subscription: Subscription | undefined;
 
@@ -18,9 +19,11 @@ export class SlideComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._movieService.GetMovies().subscribe(movies => {
-      this.movies = movies;
-    })
+    if(this.category) {
+      this._movieService.GetMovies(this.category).subscribe(movies => {
+        this.movies = movies;
+      })
+    }
   }
 
   ngOnDestroy(): void {
