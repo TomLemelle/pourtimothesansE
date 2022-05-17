@@ -16,7 +16,7 @@ import {InMemoryDataService} from "./mock/InMemoryDataService";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    environment.production
+    !environment.production
       ? HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 100 })
       : []
   ],
