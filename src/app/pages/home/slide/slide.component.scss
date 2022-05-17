@@ -1,0 +1,11 @@
+.slide {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+
+  &__element {
+    margin-right: 10px;
+    width: 200px;
+    height: 100px;
+  }
+}

@@ -1,0 +1,8 @@
+<div class="slide">
+  <div class="slide__element" *ngFor="let movie of movies">
+    <app-movie
+      [title]="movie.title"
+      [imgUrl]="movie.img"
+    ></app-movie>
+  </div>
+</div>

@@ -1,7 +1,8 @@
 .movie {
   width: 100px;
-  height: 80px;
+  height: 100%;
   position: relative;
+  overflow: hidden;
 
   img {
     width: 100%;
