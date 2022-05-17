@@ -1,4 +1,4 @@
-class Movie {
+export class Movie {
   title: string | undefined;
   img: string  | undefined;
 }
