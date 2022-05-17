@@ -13,6 +13,10 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
+        path: 'search',
+        component: HomeComponent
+      },
+      {
         path: '**',
         redirectTo: ''
       }
