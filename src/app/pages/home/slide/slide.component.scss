@@ -1,7 +1,7 @@
 .slide {
   display: flex;
   flex-wrap: nowrap;
-  overflow: scroll;
+  overflow-x: scroll;
 
   &__element {
     margin-right: 10px;
