@@ -12,9 +12,12 @@ import { MovieComponent } from './components/movie/movie.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
+  exports: [
+    MovieComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
