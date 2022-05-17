@@ -4,4 +4,5 @@ export class Movie {
   director: string | undefined;
   duration: number | undefined;
   year: number | undefined;
+  category: string | undefined;
 }

@@ -14,7 +14,11 @@ export class MoviesService {
     return this._client.get<Movie[]>('api/movies');
   }
 
-  getMovie(title: string) {
+  GetCategories(): Observable<string[]> {
+    return this._client.get<string[]>('api/categories');
+  }
+
+  GetMovie(title: string) {
 
   }
 }
