@@ -1,11 +1,11 @@
 <div>
   {{category}}
   <div class="slide">
-    <div class="navigation navigation__left">
+    <button class="navigation navigation__left" (click)="slideMovies(-20)">
       <fa-icon [icon]="leftArrow"></fa-icon>
-    </div>
+    </button>
 
-    <div class="slide__container">
+    <div class="slide__container" #viewContainer>
       <div class="slide__element" *ngFor="let movie of movies">
         <app-movie
           [title]="movie.title"
@@ -14,8 +14,8 @@
       </div>
     </div>
 
-    <div class="navigation navigation__right">
+    <button class="navigation navigation__right" (click)="slideMovies(20)">
       <fa-icon [icon]="rightArrow"></fa-icon>
-    </div>
+    </button>
   </div>
 </div>
