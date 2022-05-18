@@ -9,21 +9,26 @@ import {environment} from "../environments/environment";
 import {InMemoryDataService} from "./mock/InMemoryDataService";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchComponent } from './pages/search/search.component';
+import { AuthComponent } from './auth/auth.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
+    AuthComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    !environment.production
-      ? HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 100 })
-      : [],
-    FontAwesomeModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        !environment.production
+            ? HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {delay: 100})
+            : [],
+        FontAwesomeModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   exports: [
   ],
