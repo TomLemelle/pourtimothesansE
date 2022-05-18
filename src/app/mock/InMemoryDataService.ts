@@ -258,17 +258,19 @@ export class InMemoryDataService implements InMemoryDbService {
         year: 2013,
         category: 'Drames'
       },
-
-
-
-
-
     ];
 
     const categories: string[] = [
       'Revoir',
       'Drames'
     ];
-    return {movies, categories};
+
+    const users = [
+      {
+        login: 'test@gmail.com',
+        password: '123'
+      }
+    ]
+    return {movies, categories, users};
   }
 }

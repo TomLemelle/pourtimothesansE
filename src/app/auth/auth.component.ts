@@ -25,7 +25,7 @@ export class AuthComponent implements OnInit {
   }
 
   submit():void {
-
+    this.authService.authenticate(this.formGroup.get('login')?.value, this.formGroup.get('password')?.value);
   }
 
 }

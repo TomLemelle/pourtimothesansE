@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup">
+<form [formGroup]="formGroup" (submit)="submit()">
   <div>
     <input formControlName="email" type="email">
   </div>
