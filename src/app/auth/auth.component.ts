@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../services/auth.service";
+import {Clipboard} from "@angular/cdk/clipboard";
 
 @Component({
   selector: 'app-auth',
@@ -13,7 +14,8 @@ export class AuthComponent implements OnInit {
   hide: boolean = true;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private clipBoard: Clipboard,
   ) {
     this.formGroup = new FormGroup({
         email: new FormControl('', [Validators.email]),
@@ -27,6 +29,10 @@ export class AuthComponent implements OnInit {
 
   submit():void {
     this.authService.authenticate(this.formGroup.get('login')?.value, this.formGroup.get('password')?.value);
+  }
+
+  copyToClipBoard(value: string) {
+    this.clipBoard.copy(value);
   }
 
 }

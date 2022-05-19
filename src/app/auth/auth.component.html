@@ -2,10 +2,16 @@
   <div>
     <mat-form-field appearance="fill">
       <mat-label>Adresse email</mat-label>
-      <input matInput formControlName="email" type="email" />
+      <input #email matInput formControlName="email" type="email" />
       <mat-error *ngIf="formGroup.get('login')?.hasError('email')">
         Ce champ doit contenir une adresse email
       </mat-error>
+      <mat-hint>adresse gmail</mat-hint>
+      <button matSuffix mat-icon-button (click)="copyToClipBoard(email.value)">
+        <mat-icon>
+          content_copy
+        </mat-icon>
+      </button>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
