@@ -12,6 +12,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { AuthComponent } from './auth/auth.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ErrorDirective } from './error.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ErrorDirective } from './error.directive';
         FontAwesomeModule,
         FormsModule,
         ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatInputModule,
     ],
   providers: [],
   exports: [
