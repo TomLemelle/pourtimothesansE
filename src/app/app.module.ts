@@ -19,6 +19,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatStepperModule} from "@angular/material/stepper";
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     MatIconModule,
     MatButtonModule,
     MatStepperModule,
-    DragDropModule
+    DragDropModule,
+    MatCardModule
   ],
   providers: [],
   exports: [

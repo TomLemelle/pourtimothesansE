@@ -2,6 +2,22 @@
   box
 </div>
 
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Test
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    contenu mat card
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">
+      Test action
+    </button>
+  </mat-card-actions>
+</mat-card>
+
 <form [formGroup]="formGroup" (submit)="submit()">
   <mat-stepper linear #stepper>
     <mat-step>
