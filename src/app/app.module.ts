@@ -11,12 +11,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchComponent } from './pages/search/search.component';
 import { AuthComponent } from './auth/auth.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ErrorDirective } from './error.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     AuthComponent,
+    ErrorDirective,
   ],
     imports: [
         BrowserModule,
@@ -27,7 +29,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
             : [],
         FontAwesomeModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
   providers: [],
   exports: [

@@ -1,6 +1,6 @@
 <form [formGroup]="formGroup" (submit)="submit()">
   <div>
-    <input formControlName="email" type="email">
+    <input appError="formGroup.get('password')?.hasError('email') ?? false" formControlName="email" type="email">
   </div>
   <div>
     <input formControlName="password" type="password">
