@@ -18,6 +18,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatStepperModule} from "@angular/material/stepper";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {MatStepperModule} from "@angular/material/stepper";
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
-    MatStepperModule
+    MatStepperModule,
+    DragDropModule
   ],
   providers: [],
   exports: [
