@@ -14,6 +14,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ErrorDirective } from './error.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from "@angular/material/input";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -22,19 +25,22 @@ import {MatInputModule} from "@angular/material/input";
     AuthComponent,
     ErrorDirective,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        !environment.production
-            ? HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {delay: 100})
-            : [],
-        FontAwesomeModule,
-        FormsModule,
-        ReactiveFormsModule,
-        BrowserAnimationsModule,
-        MatInputModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    !environment.production
+      ? HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {delay: 100})
+      : [],
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule
+  ],
   providers: [],
   exports: [
   ],

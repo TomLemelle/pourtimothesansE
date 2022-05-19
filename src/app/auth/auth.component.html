@@ -1,18 +1,32 @@
 <form [formGroup]="formGroup" (submit)="submit()">
   <div>
-    <input matInput formControlName="email" type="email">
-    <mat-error *ngIf="formGroup.get('login')?.hasError('email')">
-      Ce champ doit contenir une adresse email
-    </mat-error>
+    <mat-form-field appearance="fill">
+      <mat-label>Adresse email</mat-label>
+      <input matInput formControlName="email" type="email" />
+      <mat-error *ngIf="formGroup.get('login')?.hasError('email')">
+        Ce champ doit contenir une adresse email
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" [type]="hide ? 'password' : 'text' " />
+      <button matSuffix mat-icon-button (click)="hide = !hide">
+        <mat-icon>
+          {{ hide ? 'visibility_off' : 'visibility' }}
+        </mat-icon>
+      </button>
+      <mat-hint align="end">Minimum 10 caracractères</mat-hint>
+      <mat-error *ngIf="formGroup.get('password')?.hasError('minlength')">
+        Ce champ doit contenir au moins 3 caractères
+      </mat-error>
+      <mat-error *ngIf="formGroup.get('password')?.hasError('maxlength')">
+        Ce champ ne doit pas contenir plus de 4 caractères
+      </mat-error>
+    </mat-form-field>
+
   </div>
   <div>
-    <input formControlName="password" type="password">
-    <div *ngIf="formGroup.get('password')?.hasError('minlength')">
-      {{ 'Ce champ doit contenir au moins 3 caractères' }}
-    </div>
-    <div *ngIf="formGroup.get('password')?.hasError('maxlength')">
-      {{ 'Ce champ ne doit pas contenir plus de 4 caractères' }}
-    </div>
+
   </div>
   <button [disabled]="formGroup.invalid" type="submit">Valider</button>
 </form>

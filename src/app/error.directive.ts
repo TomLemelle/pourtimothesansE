@@ -5,8 +5,6 @@ import {Directive, ElementRef, Input, Renderer2} from '@angular/core';
 })
 export class ErrorDirective {
 
-  @Input
-
   constructor(
     private ref: ElementRef,
     private renderer: Renderer2
